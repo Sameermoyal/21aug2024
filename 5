@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool pal(stack<char> st){
+    stack<char> tem = st;
+    stack<char> temp;
+    while(!tem.empty()){
+        temp.push(tem.top());
+        tem.pop();
+    }
+    while(!st.empty()){
+        if(st.top()!=temp.top()){
+            return false;
+        }
+        st.pop();
+        temp.pop();
+    }
+    return true;
+}
+
+int main(){
+    
+    stack<char> st;
+    string s = "sameer";
+    
+    for(auto it:s){
+        st.push(it);
+    }
+    
+    if(pal(st)){
+        cout<<"it is palindrome";
+    }else{
+        cout<<"it's not a palindrome";
+    }
+    
+    return 0;
+}

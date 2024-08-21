@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    stack<string>st;
+    vector<string>arr={"first","second","third","four","five","six"};
+    for(auto it:arr){
+        
+        st.push(it);
+    }
+    while(!st.empty()){
+        string k=st.top();
+        st.pop();
+        cout<<k<<" ";
+    }
+}

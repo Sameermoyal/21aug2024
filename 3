@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int rev(stack<int>&st){
+    int i=0;
+    int s=0;
+    while(!st.empty()){
+        int k=st.top();
+        s+=k;
+        st.pop();
+        i++;
+    }
+    
+    return s/i;
+}
+
+int main(){
+    stack<int>st;
+   
+    for(int i=1;i<=20;i++){
+        
+        st.push(i);
+    }
+    
+    int r =rev(st);
+   cout<<r;
+}

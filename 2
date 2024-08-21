@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool bal(string s){
+    stack<char> st;
+    for(auto it:s){
+        if(it=='{' || it=='[' || it=='('){
+            st.push(it);
+        }else{
+            if(st.empty()){
+                return false;
+            }
+            char k = st.top();
+            st.pop();
+            if(it=='(' && k!=')' ||
+                     it=='{' && k!='}' ||
+                     it=='[' && k!=']'
+                    ){
+                return false;
+            }
+        }
+    }
+    return st.empty();
+}
+
+int main(){
+    
+    string s = "{[()]}";
+    if(bal(s)){
+        cout<<"balanced";
+    }else{
+        cout<<"not balanced";
+    }
+    
+    
+    
+    return 0;
+}
